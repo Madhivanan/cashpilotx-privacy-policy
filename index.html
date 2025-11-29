@@ -172,13 +172,17 @@
                 <li>Categories and budgets</li>
                 <li>Notes and descriptions</li>
                 <li>Locally generated financial reports</li>
+                <li>Bill reminders and payment schedules (title, type, amount, due dates, repeat frequency)</li>
+                <li>Reminder notification preferences</li>
+                <li>Payment history for recurring bills</li>
             </ul>
 
             <h3>Device Information</h3>
             <ul>
                 <li>Theme preference</li>
                 <li>Currency settings</li>
-                <li>Notification settings</li>
+                <li>Notification settings (including bill reminder preferences)</li>
+                <li>Local notification identifiers (for scheduling bill reminders)</li>
                 <li>Advertising ID (used by AdMob for ad serving)</li>
             </ul>
         </div>
@@ -192,6 +196,9 @@
             <ul>
                 <li>Manage expenses, budgets, and financial records</li>
                 <li>Generate financial summaries and reports</li>
+                <li>Schedule and send local notifications for bill reminders</li>
+                <li>Automatically create expense entries when bills are marked as paid (if enabled)</li>
+                <li>Track recurring payment schedules</li>
                 <li>Secure login using local authentication</li>
                 <li>Provide personalization settings</li>
             </ul>
@@ -208,17 +215,24 @@
             
             <h3>Local-Only Storage</h3>
             <p>
-                All data (financial records, user profile) is stored only on your device using
+                All data (financial records, user profile, bill reminders) is stored only on your device using
                 the Realm local database.
             </p>
             <p>
                 Data never leaves your device unless you export it manually.
+            </p>
+            <p>
+                Bill reminders and their associated notification schedules are stored locally and managed
+                entirely on your device. Local notifications are scheduled using your device's notification
+                system and do not require internet connectivity.
             </p>
 
             <h3>Security Measures</h3>
             <ul>
                 <li>Passwords secured using Keychain/Keystore</li>
                 <li>Encryption applied to sensitive data</li>
+                <li>Bill reminder data stored securely in local Realm database</li>
+                <li>Local notifications scheduled securely on device</li>
                 <li>Optional biometric authentication (Face ID / Touch ID / Fingerprint)</li>
             </ul>
 
@@ -252,6 +266,22 @@
                 non-personalized ads by default where possible.
             </p>
             
+            <h3>Local Notifications</h3>
+            <p>
+                CashPilotX uses local notifications to remind you about upcoming bills and payments.
+                These notifications are:
+            </p>
+            <ul>
+                <li>Scheduled and stored entirely on your device</li>
+                <li>Managed by your device's operating system</li>
+                <li>Not transmitted to any external servers</li>
+                <li>Subject to your device's notification permissions</li>
+            </ul>
+            <p>
+                You can control notification permissions in your device settings and manage reminder
+                preferences within the App's Notification Settings.
+            </p>
+            
             <h3>Other Services</h3>
             <p>CashPilotX does not use:</p>
             <ul>
@@ -260,7 +290,7 @@
                 <li>External databases or cloud storage</li>
             </ul>
             <p>
-                Your financial data is never shared with AdMob or any other third-party service.
+                Your financial data and bill reminders are never shared with AdMob or any other third-party service.
             </p>
         </div>
 
@@ -273,10 +303,12 @@
                 <li>Share your financial data with third parties</li>
                 <li>Send your financial data to any external server</li>
                 <li>Use your financial data for marketing or advertising</li>
+                <li>Share bill reminder information with third parties</li>
+                <li>Transmit reminder data to external servers</li>
             </ul>
             <p>
                 <strong>Note:</strong> AdMob (Google's ad service) may collect device-level information
-                for ad serving, but your financial transactions, expenses, income, and personal financial
+                for ad serving, but your financial transactions, expenses, income, bill reminders, and personal financial
                 information are never shared with AdMob or any advertising network.
             </p>
             <p>
@@ -290,9 +322,12 @@
             <p>You can:</p>
             <ul>
                 <li>Access your financial data</li>
+                <li>Access and manage your bill reminders</li>
                 <li>Export your data (CSV / PDF / JSON)</li>
-                <li>Delete your account and all data</li>
+                <li>Delete your account and all data (including all reminders)</li>
+                <li>Delete individual bill reminders</li>
                 <li>Update your profile information</li>
+                <li>Manage notification preferences for reminders</li>
                 <li>Disable biometric authentication</li>
             </ul>
 
@@ -353,3 +388,4 @@
     </div>
 </body>
 </html>
+
